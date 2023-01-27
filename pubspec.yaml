@@ -69,8 +69,8 @@ flutter:
     - assets/marker_icon.png
     - assets/selected_marker_icon.png
     - assets/logo.png
-    - assets/readme_screen1.png
-    - assets/readme_screen2.png
+    - readme_assets/readme_screen1.png
+    - readme_assets/readme_screen2.png
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware
