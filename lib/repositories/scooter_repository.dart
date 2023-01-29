@@ -5,7 +5,7 @@ import 'package:http/http.dart' as http;
 class ScooterRepository {
   final _httpScootersInfoUri = Uri.parse('https://georgia.togo-tech.cloud/api/v6/avaliableCars');
 
-  Future<List<ScooterInfo>> getScootersInfo() async {
+  Future<List<Scooter>> getScootersInfo() async {
     final scootersResponse = await http.get(_httpScootersInfoUri);
 
     if (scootersResponse.statusCode != 200) {
@@ -16,15 +16,13 @@ class ScooterRepository {
 
     final scootersJson = json.decode(scootersResponse.body) as Map<String, dynamic>;
 
-    final List<ScooterInfo> scootersList = [];
+    final List<Scooter> scootersList = [];
     final scootersJsonList = scootersJson["cars"] as List;
     for (var element in scootersJsonList) {
-      scootersList.add(ScooterInfo.fromJson(element as Map<String, dynamic>));
+      scootersList.add(Scooter.fromJson(element as Map<String, dynamic>));
     }
     return scootersList;
-    
   }
-   
 }
 
 class GetScooterException implements Exception {
@@ -34,4 +32,3 @@ class GetScooterException implements Exception {
     this.statusCode,
   });
 }
-

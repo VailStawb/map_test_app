@@ -1,4 +1,4 @@
-class ScooterInfo {
+class Scooter {
   final List<int> tariffs;
   final num lat;
   final num long;
@@ -11,7 +11,7 @@ class ScooterInfo {
   final int companyId;
   final ScooterModel model;
 
-  ScooterInfo({
+  Scooter({
     required this.tariffs,
     required this.lat,
     required this.long,
@@ -25,8 +25,8 @@ class ScooterInfo {
     required this.model,
   });
 
-  factory ScooterInfo.fromJson(Map<String, dynamic> json) {
-    return ScooterInfo(
+  factory Scooter.fromJson(Map<String, dynamic> json) {
+    return Scooter(
       tariffs: (json["tariffs"] as List).cast<int>(),
       lat: json["lat"] as num,
       long: json["lon"] as num,
